@@ -15,6 +15,7 @@ o Koristite funkcije.
 
 void init(int*, int);
 int checkCondition(int*, int);
+void createNewArray(int*, int, int);
 
 
 int main(void)
@@ -28,7 +29,8 @@ int main(void)
 	init(arr, numOfElements);
 	int resultsMatchingPredicate = checkCondition(arr, numOfElements);
 	cout << "Ukupno " << resultsMatchingPredicate << " elemenata niza zadovoljava uslov: (element niza % 7 > 4)" << "\n";
-
+	createNewArray(arr, numOfElements, resultsMatchingPredicate);
+	delete[] arr;
 }
 
 void init(int* arr, int length) {
@@ -62,4 +64,7 @@ void createNewArray(int* arr, int length, int lengthOfNewArray) {
 	}
 
 	// do whatever is needed with new array...
+
+	// deallocate
+	delete[] newArr;
 }
